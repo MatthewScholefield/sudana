@@ -40,7 +40,10 @@
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
+    <itemPath>source/Instrument.inl</itemPath>
     <itemPath>LICENSE</itemPath>
+    <itemPath>source/SoundLimiter.cpp</itemPath>
+    <itemPath>source/SoundLimiter.hpp</itemPath>
   </logicalFolder>
   <sourceRootList>
     <Elem>source</Elem>
@@ -72,6 +75,8 @@
       </item>
       <item path="source/Instrument.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="source/Instrument.inl" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="source/Notes/Note.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="source/Notes/Note.hpp" ex="false" tool="3" flavor2="0">
@@ -95,6 +100,10 @@
       <item path="source/SongPlayer.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="source/SongPlayer.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/SoundLimiter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/SoundLimiter.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="source/SoundSystem.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -136,6 +145,8 @@
       </item>
       <item path="source/Instrument.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="source/Instrument.inl" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="source/Notes/Note.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="source/Notes/Note.hpp" ex="false" tool="3" flavor2="0">
@@ -159,6 +170,10 @@
       <item path="source/SongPlayer.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="source/SongPlayer.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/SoundLimiter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/SoundLimiter.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="source/SoundSystem.cpp" ex="false" tool="1" flavor2="0">
       </item>

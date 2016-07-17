@@ -42,6 +42,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/source/Notes/TriNote.o \
 	${OBJECTDIR}/source/Sample.o \
 	${OBJECTDIR}/source/SongPlayer.o \
+	${OBJECTDIR}/source/SoundLimiter.o \
 	${OBJECTDIR}/source/SoundSystem.o \
 	${OBJECTDIR}/source/SoundWorld.o \
 	${OBJECTDIR}/source/main.o
@@ -105,6 +106,11 @@ ${OBJECTDIR}/source/SongPlayer.o: source/SongPlayer.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Wall -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/SongPlayer.o source/SongPlayer.cpp
+
+${OBJECTDIR}/source/SoundLimiter.o: source/SoundLimiter.cpp 
+	${MKDIR} -p ${OBJECTDIR}/source
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/SoundLimiter.o source/SoundLimiter.cpp
 
 ${OBJECTDIR}/source/SoundSystem.o: source/SoundSystem.cpp 
 	${MKDIR} -p ${OBJECTDIR}/source
