@@ -43,35 +43,4 @@ private:
 	};
 };
 
-template<typename NoteType>
-Instrument<NoteType>::Instrument(SoundWorld &world, const float RELEASE_SEC,
-								 const float VOLUME, const float BASE_FREQ) :
-world(world), RELEASE_SEC(RELEASE_SEC), VOLUME(VOLUME), BASE_FREQ(BASE_FREQ) { }
-
-template<typename NoteType>
-void Instrument<NoteType>::playNote(const int NOTE, float pan)
-{
-	world.registerNote(new NoteType(calcFreq(NOTE), RELEASE_SEC, VOLUME, pan));
-}
-
-template<typename NoteType>
-float Instrument<NoteType>::calcFreq(int note)
-{
-	--note; // 1 -> [0] -> Unison
-	float freq = BASE_FREQ;
-	while (note >= 7) // 0..6
-	{
-		note -= 7;
-		freq *= 2.f;
-	}
-	while (note < 0)
-	{
-		note += 7;
-		freq /= 2.f;
-	}
-	freq *= MAJOR_RATIOS[note];
-	return freq;
-}
-
-template<typename NoteType>
-constexpr float Instrument<NoteType>::MAJOR_RATIOS[];
+#include "Instrument.inl"
