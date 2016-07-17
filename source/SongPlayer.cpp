@@ -24,10 +24,10 @@
 #include "SongPlayer.hpp"
 
 SongPlayer::SongPlayer(SoundWorld &world) :
-bass1(world, 3.f, 0.3f, 110.f),
-bass2(world, 3.f, 0.3f, 55.f),
-harm(world, 1.5f, 0.3f, 220.f),
-lead(world, 2.f, 0.13f, 110.f) { }
+bass1(world, 3.f, 0.2f, 110.f),
+bass2(world, 3.f, 0.2f, 55.f),
+harm(world, 1.5f, 0.2f, 220.f),
+lead(world, 2.f, 0.05f, 110.f) { }
 
 class SongPlayer::SongLine
 {
