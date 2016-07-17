@@ -15,31 +15,16 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "SoundWorld.hpp"
-#include "Notes/SawNote.hpp"
-#include "Notes/TriNote.hpp"
-#include "Notes/SinNote.hpp"
+#pragma once
 
-#include <iostream>
+class Sample;
 
-SoundWorld::SoundWorld() : notes{}, id(0), limiter() { }
-
-void SoundWorld::registerNote(Note* note)
+class SoundLimiter
 {
-	notes[id] = Note::Ptr(note);
-	if (++id >= MAX_NOTES)
-		id = 0;
-}
+public:
+	SoundLimiter();
+	void processSample(Sample &sample);
 
-Sample SoundWorld::calcSample()
-{
-	Sample sample;
-	for (auto &i : notes)
-	{
-		if (!i)
-			continue;
-		sample += i->calcSample();
-	}
-	limiter.processSample(sample);
-	return sample;
-}
+private:
+	float decAmount;
+};

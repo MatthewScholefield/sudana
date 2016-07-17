@@ -19,6 +19,7 @@
 
 #include "Notes/Note.hpp"
 #include "Sample.hpp"
+#include "SoundLimiter.hpp"
 
 class SoundWorld
 {
@@ -31,4 +32,6 @@ private:
 	static const int MAX_NOTES = 20;
 	Note::Ptr notes[MAX_NOTES];
 	int id = 0;
+	
+	SoundLimiter limiter;
 };
