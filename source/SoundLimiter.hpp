@@ -26,5 +26,5 @@ public:
 	void processSample(Sample &sample);
 
 private:
-	float decAmount;
+	float decRatio;
 };

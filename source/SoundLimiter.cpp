@@ -15,18 +15,20 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <cmath>
+
 #include "SoundLimiter.hpp"
 #include "Sample.hpp"
 
-SoundLimiter::SoundLimiter() : decAmount(0.f) { }
+SoundLimiter::SoundLimiter() : decRatio(1.f) { }
 
 void SoundLimiter::processSample(Sample& sample)
 {
-	decAmount = 0.965f * decAmount;
-	if (sample.left - decAmount > 1.f)
-		decAmount = sample.left - 1.f;
-	if (sample.right - decAmount > 1.f)
-		decAmount = sample.right - 1.f;
-	sample.left -= decAmount;
-	sample.right -= decAmount;
+	decRatio = 1 + 0.999995 * (decRatio - 1);
+	if (std::abs(sample.left * decRatio) > 1.f)
+		decRatio = 1.f/std::abs(sample.left);
+	if (std::abs(sample.right * decRatio) > 1.f)
+		decRatio = 1.f/std::abs(sample.right);
+	sample.left *= decRatio;
+	sample.right *= decRatio;
 }
